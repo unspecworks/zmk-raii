@@ -1,0 +1,13 @@
+file_format: "1"
+id: raii
+name: raii
+type: shield
+url: https://github.com/unspecworks/raii
+requires:
+  - rpi_pico
+features:
+  - keys
+  - underglow
+siblings:
+  - raii_left
+  - raii_right

@@ -1,0 +1,6 @@
+---
+include:
+  - board: sparkfun_pro_micro_rp2040
+    shield: raii_left
+  - board: sparkfun_pro_micro_rp2040
+    shield: raii_right

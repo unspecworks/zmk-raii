@@ -1,0 +1,39 @@
+if SHIELD_RAII_LEFT
+
+config ZMK_KEYBOARD_NAME
+    default "RAII"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+config ZMK_USB
+    default y
+
+endif
+
+if SHIELD_RAII_LEFT || SHIELD_RAII_RIGHT
+
+
+config ZMK_SPLIT
+    default y
+
+if ZMK_BACKLIGHT
+
+config PWM
+    default y
+
+config LED_PWM
+    default y
+
+endif
+
+config ZMK_RGB_UNDERGLOW
+    default y
+
+config ZMK_EXT_POWER
+    default n
+
+config ZMK_RGB_UNDERGLOW_EXT_POWER
+    default n
+
+endif
