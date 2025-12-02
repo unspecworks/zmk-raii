@@ -59,7 +59,7 @@
         compatible = "zmk,combos";
 
         mac_ime_toggle {
-            bindings = <&kp LG(SPACE)>;
+            bindings = <&kp LC(SPACE)>;
             key-positions = <31 32>;
         };
     };
