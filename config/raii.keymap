@@ -55,6 +55,15 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        mac_ime_toggle {
+            bindings = <&kp LG(SPACE)>;
+            key-positions = <31 32>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
         label = "DEFAULT";
@@ -81,10 +90,10 @@
 
         NAV {
             bindings = <
-&trans  &trans  &trans  &trans   &trans  &kp HOME       &kp LC(D)  &kp LC(U)     &kp END    &trans
-&trans  &trans  &trans  &kp TAB  &trans  &kp LEFT       &kp DOWN   &kp UP_ARROW  &kp RIGHT  &trans
-&trans  &trans  &trans  &trans   &trans  &trans         &trans     &trans        &trans     &trans
-                        &trans   &trans  &kp LG(SPACE)  &none
+&trans  &trans  &trans  &trans   &trans  &kp HOME  &kp LC(D)  &kp LC(U)     &kp END    &trans
+&trans  &trans  &trans  &kp TAB  &trans  &kp LEFT  &kp DOWN   &kp UP_ARROW  &kp RIGHT  &trans
+&trans  &trans  &trans  &trans   &trans  &trans    &trans     &trans        &trans     &trans
+                        &trans   &trans  &trans    &trans
             >;
 
             label = "Navigations";
