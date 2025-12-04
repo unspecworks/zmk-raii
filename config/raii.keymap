@@ -53,6 +53,34 @@
             hold-trigger-on-release;
             hold-trigger-key-positions = <32 33 30 31>;
         };
+
+        hml_s: hml_s {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HML_S";
+            #binding-cells = <2>;
+            tapping-term-ms = <250>;
+            bindings = <&kp>, <&kp>;
+
+            flavor = "balanced";
+            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29>;
+            require-prior-idle-ms = <110>;
+            quick-tap-ms = <150>;
+            hold-trigger-on-release;
+        };
+
+        hmr_s: hmr_s {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HMR_S";
+            #binding-cells = <2>;
+            tapping-term-ms = <250>;
+            bindings = <&kp>, <&kp>;
+
+            flavor = "balanced";
+            require-prior-idle-ms = <110>;
+            quick-tap-ms = <150>;
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24>;
+        };
     };
 
     combos {
@@ -61,6 +89,16 @@
         mac_ime_toggle {
             bindings = <&kp LC(SPACE)>;
             key-positions = <31 32>;
+        };
+
+        tab {
+            bindings = <&kp TAB>;
+            key-positions = <13 12>;
+        };
+
+        mac_ime_tog2 {
+            bindings = <&kp LC(SPACE)>;
+            key-positions = <16 17>;
         };
     };
 
@@ -71,10 +109,10 @@
         NOR {
             label = "Normal";
             bindings = <
-&kp Q            &kp W         &kp E        &kp R           &kp T          &kp Y              &kp U          &kp I             &kp O         &kp P
-&hml LEFT_ALT A  &hml LCTRL S  &hml LGUI D  &hml LSHIFT F   &kp G          &kp H              &hmr RSHFT J   &hmr RIGHT_GUI K  &hmr RCTRL L  &hmr RIGHT_ALT SEMICOLON
-&kp Z            &kp X         &kp C        &kp V           &kp B          &kp N              &kp M          &kp COMMA         &kp DOT       &kp SLASH
-                                            &tcht 3 ESCAPE  &tcht 2 SPACE  &tcht 1 BACKSPACE  &tcht 5 ENTER
+&kp Q            &kp W         &kp E        &kp R            &kp T          &kp Y              &kp U           &kp I             &kp O         &kp P
+&hml LEFT_ALT A  &hml LCTRL S  &hml LGUI D  &hml_s LSHIFT F  &kp G          &kp H              &hmr_s RSHFT J  &hmr RIGHT_GUI K  &hmr RCTRL L  &hmr RIGHT_ALT SEMICOLON
+&kp Z            &kp X         &kp C        &kp V            &kp B          &kp N              &kp M           &kp COMMA         &kp DOT       &kp SLASH
+                                            &tcht 3 ESCAPE   &tcht 2 SPACE  &tcht 1 BACKSPACE  &tcht 5 ENTER
             >;
         };
 
@@ -101,10 +139,10 @@
 
         NUM {
             bindings = <
-&trans  &trans     &trans     &trans     &trans  &trans  &kp N7  &kp N8  &kp N9  &trans
+&trans  &trans     &kp DOT    &trans     &trans  &trans  &kp N7  &kp N8  &kp N9  &trans
 &trans  &kp SLASH  &kp MINUS  &kp PLUS   &trans  &trans  &kp N4  &kp N5  &kp N6  &trans
-&trans  &trans     &trans     &kp UNDER  &trans  &kp N0  &kp N1  &kp N2  &kp N3  &trans
-                              &trans     &trans  &trans  &sl 4
+&trans  &trans     &trans     &kp UNDER  &trans  &trans  &kp N1  &kp N2  &kp N3  &trans
+                              &trans     &trans  &sl 4   &kp N0
             >;
 
             label = "Numbers";
